@@ -1,0 +1,88 @@
+<h3 class="text-title heading-report1" align="center">Daily Transactions Reports</h3>   
+
+<div class="row">
+           
+    <!-- <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header card-header-info card-header-icon">
+          <!-- <div class="card-icon">
+            <i class="material-icons">content_copy</i>
+          </div> -->
+          <!-- <p class="card-category"  Style="color:#52516A; font-size:20px;"  align="center" >Total Transaction Volume</p>
+          <h3 class="card-title" style=" color: #2ABABF;" align="center">{{ total | currency:'GHS':'GHS ' }}</h3>
+          <!--<h3 class="card-title" *ngIf="loading">loading ...</h3>-->
+
+           <!-- <app-spinner *ngIf="loading"></app-spinner>
+          <h3 class="card-title error">{{ loaderror }}</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons text-info">autorenew</i>Updates every 24hrs
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header card-header-danger card-header-icon">
+          <!-- <div class="card-icon">
+            <i class="material-icons">store</i>
+          </div> -->
+          <p class="card-category"  Style="color:#52516A; font-size:20px;"  align="center"> Total Volume For Today</p>
+          <h3 class="card-title" style="color:#2ABABF;" align="center">{{ transacttoday | currency:'GHS':'GHS ' }}</h3>
+
+           <app-spinner *ngIf="loading"></app-spinner>
+          <h3 class="card-title error">{{ loaderror }}</h3>
+          <!--<h3 class="card-title" *ngIf="loading">loading ...</h3>-->
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">autorenew</i>Updates every 24hrs
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header card-header-danger card-header-icon">
+          <!-- <div class="card-icon">
+            <i class="material-icons">info_outline</i>
+          </div> -->
+          <p class="card-category"  Style="color:#52516A; font-size:20px;"  align="center">Policies Sold for Today</p>
+          <h3 class="card-title" style="color:#2ABABF;" align="center">{{policytoday}}</h3>
+          <app-spinner *ngIf="loading"></app-spinner>
+          <h3 class="card-title error">{{ loaderror }}</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">autorenew</i>Updates every 24hrs
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+              <!-- <div class="card-icon">
+                <i class="material-icons">info_outline</i>
+              </div> -->
+              <p class="card-category"  Style="color:#52516A; font-size:20px;"  align="center">Sticker Sold for Today</p>
+              <h3 class="card-title" style="color:#2ABABF;" align="center">{{stickersoldtoday}}</h3>
+              <app-spinner *ngIf="loading"></app-spinner>
+              <h3 class="card-title error">{{ loaderror }}</h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">autorenew</i>Updates every 24hrs
+              </div>
+            </div>
+          </div>   
+         </div>
+   
+  </div>
+
+  
+  <h3 class="text-title heading-report1" align="center"> Transactions Modes</h3>   

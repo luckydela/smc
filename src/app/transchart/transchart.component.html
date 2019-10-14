@@ -1,0 +1,43 @@
+<br><br><br><br><br>
+
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-lg-3"></div>
+
+      <div class="col-md-12 col-lg-9">
+        <div class="card">
+          <div class="card-header card-header-info daterange">
+            <h4 class="card-title">Top performing agents and Amount Acrued </h4>
+            <div>
+              <label>DateFrom</label>
+              <input type="date" style="width: 80px;  font-size: 8px; color:rgb(0, 0, 0); " name="topperformstartdate" [(ngModel)]="topperformstartdate"/>
+            </div>
+            <div>
+              <label>DateTo</label>
+              <input type="date" style="width: 80px; font-size: 8px; color:rgb(0, 0, 0);" name="topperformenddate" [(ngModel)]="topperformenddate"/>
+            </div>
+            <div>
+                <button class="btn btn-white btn-sm btn-xs generate" (click)="generatetopagraphformByDate()">Generate</button>
+              </div>
+          </div>
+          <div class="card-body">
+            <div class="spinner">
+              <app-spinner *ngIf="loading" ></app-spinner>
+            </div>
+            <div class="chart">
+              <canvas id="performance"  width="400" height="120"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-9">
+        <app-hfstckersalegraph></app-hfstckersalegraph>
+      </div>
+    </div>
+  </div>
+</div>

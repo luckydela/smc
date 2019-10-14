@@ -1,0 +1,17 @@
+
+<div class="card card-stats">
+  <div class="card-header card-header-info card-header-icon">
+    <!-- <div class="card-icon">
+      <i class="material-icons">double_arrow</i>
+    </div> -->
+    <p class="card-category"  style=" color: #52516a;font-size: 20px;" align="center">Sticker Sold for Today</p>
+    <h3 class="card-title" align="center" style=" color: #2ABABF;">{{stickertoday}}</h3>
+    <app-spinner *ngIf="loading"></app-spinner>
+    <h3 class="card-title error">{{ loaderror }}</h3>
+  </div>
+  <div class="card-footer">
+    <div class="stats">
+      <i class="material-icons">autorenew</i>Updates every 24hrs
+    </div>
+  </div>
+</div>

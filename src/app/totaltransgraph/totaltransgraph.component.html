@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-12" >
+    <div class="card">
+      <div class="card-header card-header-info daterange">
+
+        <h4 class="card-title" Style="color:black; font-size: 20px; font-weight: bold;"> Accrued Amount in Last 7 days</h4>
+        
+      </div>
+      <div class="card-body">
+        <!-- choose date ranges -->
+        <div class="row">
+           <!-- period picker -->
+         <div class="col-lg-3 col-sm-12 col-md-12">
+            <div class="dropdown">
+               <button class="btn btn-info btn-lg btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Select trends 
+                  <i class="material-icons">keyboard_arrow_down</i>
+
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <a class="dropdown-item" (click)="sevendaycal()">7</a>
+                 <a class="dropdown-item" (click)="thirtydaycal()">30</a>
+                 <a class="dropdown-item" (click)="oneyearcal()">1 year</a>
+     
+               </div>
+             </div>
+             </div>
+             <!-- end of period picker -->
+
+        <div class="col-lg-2 col-sm-2 col-md-2">
+            <input type="date" style=" font-size: 8px; color:rgb(0, 0, 0); "  class="inputtype" name="topperformstartdate" [(ngModel)]="topperformstartdate"/>
+            <label>DateFrom</label>
+          </div>
+          <div class="col-lg-2 col-sm-2 col-md-2">
+            <input type="date" style="  font-size: 8px; color:rgb(0, 0, 0);"  name="topperformenddate" [(ngModel)]="topperformenddate"/>
+            <label >DateTo</label>
+          </div>
+          <div class="col-lg-3 col-sm-3 col-md-3">
+              <button class="btn btn-info btn-sm generate" (click)="perfomanceDetails()">Generate</button>
+            </div>
+          </div>
+        <!-- end of choosing date ranges -->
+
+        
+        <div class="spinner">
+          <app-spinner *ngIf="loading"></app-spinner>
+        </div>
+        <div class="chart">
+          <h4 *ngIf="periodchart.length === 0" align="center">Load Graph by Selecting Date Difference</h4>
+          <canvas id="detailstrans" Style="height: 10px;" ></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="card card-stats">
+    <div class="card-header card-header-info card-header-icon" >
+      <!-- <div class="card-icon">
+        <i class="material-icons">content_copy</i>
+      </div> -->
+      <p class="card-category" Style="color:#52516A; font-size:20px;" align="center">Total Transaction Volume</p>
+      <h3 class="card-title" align="center" style=" color: #2ABABF;">{{ total | currency:'GHS':'GHS ' }}</h3>
+        <app-spinner *ngIf="loading"></app-spinner>
+      <h3 class="card-title error">{{ loaderror }}</h3>
+    </div>
+    <div class="card-footer">
+      <div class="stats">
+        <i class="material-icons">autorenew</i>Updates every 24hrs
+      </div>
+    </div>
+  </div>

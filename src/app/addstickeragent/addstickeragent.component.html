@@ -1,0 +1,146 @@
+<br><br><br><br>
+<div class="content">
+   <div class="container-fluid">
+     <div class="row" *ngIf="generatestickerno">
+
+        <div class="col-md-4 col-lg-5 col-xs-4 col-sm-2"> </div>
+
+       <div class="col-md-4 col-lg-5 col-xs-4 col-sm-8">
+         <div class="card">
+           <div class="card-header card-header-info">
+             <h4 class="card-title ">Generate Stickers for : {{ agentid }}</h4>
+             <p class="card-category"> </p>
+           </div>
+           <div class="card-body">
+             <form [formGroup]="genstickerform">
+                 <div class="range-form">
+                   <div class="range">
+                     <input type="number"  placeholder="Min"  formControlName="min"  class="form-control">
+                   </div>
+                   <div class="range">
+                     <input type="number"  placeholder="Max"   formControlName="max" class="form-control">
+                   </div>  
+                 </div>
+                 <div class="range-btn">
+                   <button type="submit" class="btn btn-round btn-info" (click)="generateStickers()">
+                     Generate
+                   </button>
+                   <button type="submit" class="btn btn-round btn-danger" (click)="cancelfn()">
+                     Cancel
+                   </button>
+                 </div>
+             </form>
+           </div>
+         </div>
+       </div>
+       <div class="col-md-3">
+
+       </div>
+     </div>
+     <div class="row">
+
+        <div class="col-md-2 col-lg-3 col-xs-0 col-sm-0"></div>
+
+       <div class="col-md-10 col-lg-9 col-xs-12 col-sm-12">
+         <div class="card">
+           <div class="card-header card-header-info">
+             <h4 class="card-title ">Sticker Assignment</h4>
+             <p class="card-category"> Register Sticker booklet on behalf of agents</p>
+           </div>
+           <div class="card-body">
+               <div class=" form-inline active-cyan active-cyan-2 md-form mt-0 search">
+                   <input class="form-control" type="text" placeholder="Search by Anything" #query (keyup)="search(query.value)" aria-label="Search">
+                 </div>
+             <div class="table-responsive">
+               <table class="table">
+                 <thead class=" text-info">
+                   <th>#</th>
+                   <th>ID</th>
+                   <th>Full Name</th>
+                   <th>Phone</th>
+                   <th>Email</th>
+                   <th>Date-Time</th>
+                   <th>Action</th>
+                 </thead>
+                 <tbody>
+                     <tr *ngFor="let agent of searchdata ; let i=index;" >
+                         <td>{{ i + 1}}</td>
+                         <td>{{agent.id}}</td>
+                         <td>{{agent.firstName}}, {{agent.lastName}}</td>
+                         <td>{{agent.phone}}</td>
+                         <td>{{agent.email}}</td>
+                         <td>{{agent.date_created}}</td>
+                         <td>
+                           <button type="button" rel="tooltip" title="Generate Sticker No" (click)="generatefn(agent)" class="btn btn-sm btn-info ">
+                             <i class="material-icons">edit</i>
+                             Generate No
+                           </button>
+                         </td>
+                        </tr>
+                   
+                 </tbody>
+               </table>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <div class="row">
+        <div class="col-md-2 col-lg-3 col-xs-0 col-sm-0"></div>
+
+        <div class="col-md-10 col-lg-9 col-xs-12 col-sm-12">
+
+     <div class="card" *ngIf=stickertbl>
+     <div class="card-body" >
+        <div class=" form-inline active-cyan active-cyan-2 md-form mt-0 search">
+            <input class="form-control" type="text" placeholder="Search by Anything" #query (keyup)="search(query.value)" aria-label="Search">
+          </div>
+      <div class="table-responsive">
+     <table class="table">
+        <thead class=" text-info">
+          <th>#</th>
+          <th>Sticker Range ID</th>
+          <th> Agent ID</th>
+          <th>Min Range</th>
+          <th>Current Sticker</th>
+          <th>  manager_email </th>
+          <th>Status</th>  
+          <th>Date Created</th>
+          <th>Date Updated</th>
+         
+          
+        </thead>
+        <tbody> 
+          <tr *ngFor="let stickerassign of agentsticker ; let i=index;" >
+              <!--<tr>-->
+                  <!--<td>1</td>-->
+               <td>{{ i + 1}}</td>
+                <td>{{stickerassign.stickerRange_id}}</td>
+                <td>{{stickerassign.agent_id}}</td>
+                <td>{{stickerassign.minimum_range}}</td>
+                <td>{{stickerassign.current_sticker}}</td>
+                <td>{{stickerassign.manager_email}}</td>
+                <td>{{stickerassign.status}}</td>
+                <td>{{stickerassign.created_at}}</td>
+                <td>{{stickerassign.updated_at}}</td>
+            </tr>
+
+            </tbody>
+            </table>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+     </div>
+
+
+
+
+ </div>
+</div>
+
+
+
